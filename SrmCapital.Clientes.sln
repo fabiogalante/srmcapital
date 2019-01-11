@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SrmCapita.CoreServices", "SrmCapita.CoreServices\SrmCapita.CoreServices.csproj", "{595A2AC1-119A-4B0D-9381-D4D5FDA9403F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrmCapita.App", "SrmCapita.App\SrmCapita.App.csproj", "{89D3B260-FFEC-4D33-B1C8-2C3383B71F7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{595A2AC1-119A-4B0D-9381-D4D5FDA9403F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{595A2AC1-119A-4B0D-9381-D4D5FDA9403F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{595A2AC1-119A-4B0D-9381-D4D5FDA9403F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{595A2AC1-119A-4B0D-9381-D4D5FDA9403F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89D3B260-FFEC-4D33-B1C8-2C3383B71F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D3B260-FFEC-4D33-B1C8-2C3383B71F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D3B260-FFEC-4D33-B1C8-2C3383B71F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D3B260-FFEC-4D33-B1C8-2C3383B71F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88FD154D-472A-4BB3-BF9B-70BFCE8D22FE}
+	EndGlobalSection
+EndGlobal
