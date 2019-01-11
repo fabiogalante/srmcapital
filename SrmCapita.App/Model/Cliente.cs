@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace SrmCapita.CoreServices.ViewModel
+namespace SrmCapita.App.Model
 {
-    public class ClientesViewModel
+    public class Cliente
     {
 
         public int Id { get; set; }
@@ -18,7 +19,5 @@ namespace SrmCapita.CoreServices.ViewModel
         public decimal LimiteCompra { get; set; }
 
         public DateTime DataCadastro { get; set; }
-
-
     }
 }

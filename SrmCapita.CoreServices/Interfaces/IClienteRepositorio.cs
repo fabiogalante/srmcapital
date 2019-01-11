@@ -9,5 +9,8 @@ namespace SrmCapita.CoreServices.Interfaces
     public interface IClienteRepositorio
     {
         Task<List<Cliente>> ObterClientes();
+        Task<int> AdicionarCliente(Cliente cliente);
+        Task<Cliente> ObterCliente(int? clienteId);
+        Task<Cliente> ExcluirCliente(int? clienteId);
     }
 }

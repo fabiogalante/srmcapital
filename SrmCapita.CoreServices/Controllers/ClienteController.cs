@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SrmCapita.CoreServices.Interfaces;
+using SrmCapita.CoreServices.Model;
 
 namespace SrmCapita.CoreServices.Controllers
 {
@@ -30,5 +31,38 @@ namespace SrmCapita.CoreServices.Controllers
             return await _clienteServico.ObterClientes();
 
         }
+
+        [HttpPost]
+        [Route("CadastrarCliente")]
+        public async Task<IActionResult> CadastrarCliente([FromBody] Cliente cliente)
+        {
+            return await _clienteServico.AdicionarCliente(cliente);
+        }
+
+
+        [HttpGet]
+        [Route("ObterCliente/{clienteId}")]
+        public async Task<IActionResult> ObterCliente(int clienteId)
+        {
+            return await _clienteServico.ObterCliente(clienteId);
+        }
+
+        [HttpDelete("{clienteId}/ExcluirCliente")]
+        public async Task<IActionResult> Excluir(int clienteId)
+        {
+            return await _clienteServico.ExcluirCliente(clienteId);
+        }
+
+
+
+        [HttpPost]
+        [Route("UploadFile")]
+        public IActionResult UploadFile(byte[] rowVersion)
+        {
+            //
+            return new NotFoundResult();
+        }
+
+        
     }
 }

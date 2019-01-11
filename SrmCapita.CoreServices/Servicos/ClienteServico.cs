@@ -27,11 +27,17 @@ namespace SrmCapita.CoreServices.Servicos
                 {
                     return new OkObjectResult(clientes.Select(c => new ClientesViewModel
                             {
-                                ClienteNome = c.Nome
+                                Id = c.Id,
+                                Nome = c.Nome,
+                                Telefone = c.Telefone,
+                                Email = c.Email,
+                                DataCadastro = c.DataCadastro,
+                                LimiteCompra = c.LimiteCompra,
+                               
                             }
                         )
-                        .OrderBy(c => c.ClienteNome)
-                        //.ThenBy(c => c.ClienteNome)
+                        .OrderBy(c => c.Nome)
+                        .ThenBy(c => c.LimiteCompra)
                     );
                 }
 
@@ -42,6 +48,54 @@ namespace SrmCapita.CoreServices.Servicos
             {
                 return new ConflictResult();
             }
+        }
+
+        public async Task<IActionResult> AdicionarCliente(Cliente cliente)
+        {
+            if (cliente == null)
+                return new BadRequestResult();
+
+            var clienteId = await _clienteRepositorio.AdicionarCliente(cliente);
+
+            if (clienteId > 0)
+                return new OkObjectResult(clienteId);
+
+            return new StatusCodeResult(500);
+        }
+
+        public async Task<IActionResult> ObterCliente(int? clienteId)
+        {
+            Cliente cliente = await _clienteRepositorio.ObterCliente(clienteId);
+
+            if (cliente != null)
+            {
+                return new OkObjectResult(new ClientesViewModel
+                {
+                    Id = cliente.Id,
+                    Nome = cliente.Nome,
+                    Telefone = cliente.Telefone,
+                    Email = cliente.Email,
+                    DataCadastro = cliente.DataCadastro,
+                    LimiteCompra = cliente.LimiteCompra,
+
+                });
+
+            }
+
+            return new NoContentResult();
+        }
+
+        public async Task<IActionResult> ExcluirCliente(int? clienteId)
+        {
+            if (clienteId == null)
+                return new NoContentResult();
+
+            var cliente = await _clienteRepositorio.ExcluirCliente(clienteId);
+
+            return new OkObjectResult(new ClientesViewModel()
+            {
+                Id = cliente.Id
+            });
         }
     }
 }

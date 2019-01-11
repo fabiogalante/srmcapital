@@ -15,9 +15,9 @@ namespace SrmCapita.App.Dados
     {
         private readonly string _uri = ConfigurationManager.AppSettings["Uri"];
 
-        public async Task<List<Clientes>> ObterClietes()
+        public async Task<List<Cliente>> ObterClietes()
         {
-            var jsonList = new List<Clientes>();
+            var jsonList = new List<Cliente>();
 
 
             var uri = $"{_uri}/api/cliente/obterclientes";
@@ -30,7 +30,7 @@ namespace SrmCapita.App.Dados
                     {
                         
                         var clienteJsonString = await response.Content.ReadAsStringAsync();
-                        jsonList = JsonConvert.DeserializeObject<Clientes[]>(clienteJsonString).ToList();
+                        jsonList = JsonConvert.DeserializeObject<Cliente[]>(clienteJsonString).ToList();
                         
                     }
                 }
